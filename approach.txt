@@ -1,0 +1,38 @@
+Problem:
+Write an application to compare two file entries, line by line. If they match, return matched, else, unmatched.
+
+Constraints:
+1. Follow good naming conventions. Follow a style-guide.
+2. Write comments.
+3. Write stubs/mocks first.
+4. Write reusable code.
+5. Write tests.
+6. Write scalable code.
+7. Use version controlling at all steps.
+
+Naive Approach:
+1. Read files line by line.
+2. Compare each line if they are equal.
+
+Better Approach:
+1. Create a model class to save objects in the files through them.
+2. Read both files and create a list of objects.
+3. Compare those objects 1 on 1 using comparison method of the model class.
+
+Good Approach (Reusable code):
+1. Create a file reading class which handles reading of both classes.
+2. Use file reader class to get object list from files.
+3. Use comparison method of object class to compare 1 on 1.
+
+Much Better Approach (More reusable code):
+1. Create a generic file reading class which handles reading of both classes.
+2. Use specified file reader class to get object list from files.
+3. Use comparison method of object class to compare 1 on 1.
+
+Wholesome Approach (Reusable code and TDD):
+1. Create classes first.
+2. Write methods with stubs.
+3. Write units tests on those methods.
+4. Run the tests.
+5. Implement the classes.
+6. Run the tests.
