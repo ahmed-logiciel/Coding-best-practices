@@ -17,6 +17,8 @@ def readfile(path: str, content: list) -> bool:
     for i in lines:
         content.append(i)
 
+    files.close()
+
     return True
 
 
