@@ -5,11 +5,11 @@ class FileReader:
     def __init__(self, path: str) -> None:
         print("File reader init")
         self.m_path = path
-        self.m_file = 0
+        self.__m_file = 0
 
     def __open(self) -> bool:   # private method, abstracted away from user
         try:
-            self.m_file = open(self.m_path, 'r')
+            self.__m_file = open(self.m_path, 'r')
             return True
         except:
             print("Exception thrown. File path specified is incorrect")
@@ -24,7 +24,7 @@ class FileReader:
     def getContent(self, objList: list) -> bool:    # reads file and stores in the referenced list
         objList.clear()    # empty it first
         if (self.__open()):
-            strList = self.m_file.readlines()
+            strList = self.__m_file.readlines()
             for i in strList:
                 obj = i.strip().split()
                 if len(obj) != 3:                   # this three is a magic number, think of logic to fix
@@ -36,7 +36,7 @@ class FileReader:
     
     def __del__(self):  # automatically called
         print("File reader destructor")
-        if (type(self.m_file) != int):
-            self.m_file.close()
+        if (type(self.__m_file) != int):
+            self.__m_file.close()
 
 
