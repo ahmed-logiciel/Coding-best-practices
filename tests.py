@@ -13,6 +13,7 @@ def test_readfile():
     else:
         print("Pass")
 
+
 def test_compare():
 
     if compare("Ahmed", "Ali") == True:
