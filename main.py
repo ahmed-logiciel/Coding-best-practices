@@ -1,7 +1,7 @@
 from models.object import Object
 from helper.fileReader import FileReader
 
-def compare(objA, objB):
+def compare(objA: Object, objB: Object):
     totalCompares = min(len(objA), len(objB))
 
     for i in range(totalCompares):
